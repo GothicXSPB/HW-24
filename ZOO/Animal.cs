@@ -1,6 +1,6 @@
 ﻿namespace ZOO
 {
-    public class Ratel
+    public class Animal
     {
         public string Name { get; set; }
 
@@ -22,12 +22,12 @@
 
         public void DoEat()
         {
-            Console.WriteLine($"{Name}: Я поел!");
+            Console.WriteLine($"{Name}: Я поел {Food}!");
         }
 
         public void DoSound()
         {
-            Console.WriteLine($"{Name} *рычит*");
+            Console.WriteLine($"{Name} *{Sound}*");
         }
 
         public void Play()

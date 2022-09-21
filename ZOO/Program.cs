@@ -1,12 +1,12 @@
 ﻿using ZOO;
 
-Ratel ratel = new Ratel();
-Ratel ratel1 = new Ratel();
-Ratel ratel2 = new Ratel();
-ratel.Name = "Медоед";
-ratel1.Name = "Димон";
-ratel2.Name = "Креветочная батарея";
+Animal animal = new Animal();
+Animal animal1 = new Animal();
+Animal animal2 = new Animal();
+animal.Name = "Медоед";
+animal1.Name = "Димон";
+animal2.Name = "Креветочная батарея";
 
-ratel.Play();
-ratel2.DoEat();
-ratel1.DoSound();
+animal.Play();
+animal2.DoEat();
+animal.DoSound();
