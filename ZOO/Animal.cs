@@ -26,7 +26,7 @@
 
         private const int _minAge = 0;
 
-        public Animal(string name,int age, int weight)
+        public Animal(string name, int age, int weight)
         {
             Name = name;
             Age = age;
@@ -47,9 +47,14 @@
                 Weight = weight;
             }
         }
-        
+
         public void DoEat(string food, int mass)
         {
+            if (Weight >= 3 * _minWeight)
+            {
+                Console.WriteLine($"{Name}: Больше не может есть {food}!");
+                return;
+            }
             if (food == "meat" || food == "poultry" || food == "fish")
             {
                 Weight += mass;
@@ -58,10 +63,6 @@
             else
             {
                 Console.WriteLine($"{Name}: Отказывается есть {food}!");
-            }
-            if(Weight==2*_minWeight)
-            {
-                Console.WriteLine($"{Name}: Больше не может есть {food}!");
             }
         }
 
@@ -72,7 +73,7 @@
 
         public void Play(int time)
         {
-            Weight-=time/10;
+            Weight -= time / 10;
             if (Weight < _minWeight)
             {
                 Weight = _minWeight;
@@ -80,7 +81,7 @@
             Console.WriteLine($"{Name} поиграл с мячиком и весит {Weight}");
         }
 
-        
+
 
     }
 }
