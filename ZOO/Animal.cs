@@ -36,7 +36,7 @@
             }
             else
             {
-                Age = weight;
+                Age = age;
             }
             if (weight <= _minWeight)
             {
@@ -50,9 +50,13 @@
 
         public void DoEat(string food, int mass)
         {
+            if (mass < 0)
+            {
+                throw new ArgumentException("mass не может быть меньше 0");
+            }
             if (Weight >= 3 * _minWeight)
             {
-                Console.WriteLine($"{Name}: Больше не может есть {food}!");
+                Console.WriteLine($"{Name}: Больше не может есть!");
                 return;
             }
             if (food == "meat" || food == "poultry" || food == "fish")
