@@ -77,6 +77,10 @@
 
         public void Play(int time)
         {
+            if (time < 0)
+            {
+                throw new ArgumentException("time не может двигаться в другую сторону");
+            }
             Weight -= time / 10;
             if (Weight < _minWeight)
             {
