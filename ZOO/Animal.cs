@@ -50,7 +50,7 @@
 
         public Animal(string SpeciesName, string name, int age, int weight)
         {
-            switch (name)
+            switch (SpeciesName)
             {
                 case "Wolf":
                     Diet = "predator";
