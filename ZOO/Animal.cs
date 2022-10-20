@@ -26,8 +26,47 @@
 
         private const int _minAge = 0;
 
-        public Animal(string name, int age, int weight)
+        //public Animal(string name, int age, int weight)
+        //{
+        //    Name = name;
+        //    Age = age;
+        //    if (age <= _minAge)
+        //    {
+        //        Age = _minAge;
+        //    }
+        //    else
+        //    {
+        //        Age = age;
+        //    }
+        //    if (weight <= _minWeight)
+        //    {
+        //        Weight = _minWeight;
+        //    }
+        //    else
+        //    {
+        //        Weight = weight;
+        //    }
+        //} 
+
+        public Animal(string SpeciesName, string name, int age, int weight)
         {
+            switch (name)
+            {
+                case "Wolf":
+                    Diet = "predator";
+                    Biom = "forest";
+                    break; 
+
+                case "Lion":
+                    Diet = "predator";
+                    Biom = "savannah";
+                    break;
+
+                case "Elephant":
+                    Diet = "herbivorous";
+                    Biom = "savannah";
+                    break;
+            }
             Name = name;
             Age = age;
             if (age <= _minAge)
@@ -47,7 +86,7 @@
                 Weight = weight;
             }
         }
-
+       
         public void DoEat(string food, int mass)
         {
             if (mass < 0)
@@ -59,14 +98,20 @@
                 Console.WriteLine($"{Name}: Больше не может есть!");
                 return;
             }
-            if (food == "meat" || food == "poultry" || food == "fish")
+            switch (food)
             {
-                Weight += mass;
-                Console.WriteLine($"{Name}: Я поел {food}!");
-            }
-            else
-            {
-                Console.WriteLine($"{Name}: Отказывается есть {food}!");
+                case "meat":
+                    Console.WriteLine($"{Name}: радостно кушает!");
+                    break;
+                case "chiken":
+                    Console.WriteLine($"{Name}: радостно кушает!");
+                    break;
+                case "fish":
+                    Console.WriteLine($"{Name}: радостно кушает!");
+                    break;
+                default:
+                    Console.WriteLine($"{Name}: отказывается есть это!");
+                    break;
             }
         }
 
