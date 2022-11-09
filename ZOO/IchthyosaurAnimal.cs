@@ -12,5 +12,7 @@ namespace ZOO
         {
             Name = name;
         }
+
+        string[] predator = new string[] { "fish", "meat", "chiken", "frog" };
     }
 }
