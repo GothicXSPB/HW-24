@@ -8,7 +8,7 @@ namespace ZOO
 
         public double AmountOfFoodConsumedPerDay { get; private set; }
 
-        public int Age { get; private set; }
+        public int Age { get; set; }
 
         public string SpeciesName { get; private set; }
 
@@ -20,7 +20,7 @@ namespace ZOO
 
         public string Food { get; set; }
 
-        public string Diet { get; private set; }
+        public string Diet { get; set; }
 
         public string Sound { get; private set; }
 
@@ -87,12 +87,7 @@ namespace ZOO
                 HerbivoreEatOrNo(food);
             }
         }
-
-        private int GetLength(string[] predator)
-        {
-            throw new NotImplementedException();
-        }
-
+                
         public void DoSound()
         {
             Console.WriteLine($"{Name} *рычит*");

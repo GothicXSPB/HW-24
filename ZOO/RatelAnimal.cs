@@ -8,5 +8,16 @@ namespace ZOO
 {
     public class RatelAnimal : AbstractAnimal
     {
+        public RatelAnimal(string name, int age)
+        {
+            Name = name;
+            Diet = "predator";
+            Age = age;
+        }
+
+        public void Hunt()
+        { 
+        
+        }
     }
 }

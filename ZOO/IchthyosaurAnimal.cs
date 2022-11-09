@@ -8,11 +8,17 @@ namespace ZOO
 {
     public class IchthyosaurAnimal : AbstractAnimal
     {
-        public IchthyosaurAnimal(string name)
+        public IchthyosaurAnimal(string name, int age)
         {
             Name = name;
+            Diet = "predator";
+            Age = age;
+        }
+        
+        public void Swimming()
+        { 
+        
         }
 
-        string[] predator = new string[] { "fish", "meat", "chiken", "frog" };
     }
 }
