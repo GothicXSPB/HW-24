@@ -8,7 +8,7 @@ namespace ZOO.Test
             string food = "Шарик";
             int mass = -4;
 
-            Assert.Throws<ArgumentException>(() => Animal.DoEat(food, mass));
+            Assert.Throws<ArgumentException>(() => AbstractAnimal.DoEat(food, mass));
         }
 
         [TestCase]

@@ -1,33 +1,50 @@
 ﻿namespace ZOO
 {
-    public class Animal
+    public abstract class AbstractAnimal
     {
         public string Name { get; set; }
 
-        public double AmountOfFoodConsumedPerDay { get; private set; }
+        public double AmountOfFoodConsumedPerDay { get; set; }
 
-        public int Age { get; private set; }
+        public int Age { get; set; }
 
-        public string SpeciesName { get; private set; }
+        public string SpeciesName { get; set; }
 
-        public string Biom { get; private set; }
+        public string Biom { get; set; }
 
-        public string RequiredAreaPerIndividual { get; private set; }
+        public string RequiredAreaPerIndividual { get; set; }
 
-        public int Weight { get; private set; }
+        public int Weight { get; set; }
 
-        public string Food { get; private set; }
+        public string Food { get; set; }
 
-        public string Diet { get; private set; }
+        public string Diet { get; set; }
 
-        public string Sound { get; private set; }
+        public string Sound { get; set; }
 
         private const int _minWeight = 35;
 
         private const int _minAge = 0;
 
-        //public Animal(string name, int age, int weight)
+        //public AbstractAnimal(string SpeciesName, string name, int age, int weight)
         //{
+        //    switch (SpeciesName)
+        //    {
+        //        case "Wolf":
+        //            Diet = "predator";
+        //            Biom = "forest";
+        //            break;
+
+        //        case "Lion":
+        //            Diet = "predator";
+        //            Biom = "savannah";
+        //            break;
+
+        //        case "Elephant":
+        //            Diet = "herbivorous";
+        //            Biom = "savannah";
+        //            break;
+        //    }
         //    Name = name;
         //    Age = age;
         //    if (age <= _minAge)
@@ -46,47 +63,8 @@
         //    {
         //        Weight = weight;
         //    }
-        //} 
+        //}
 
-        public Animal(string SpeciesName, string name, int age, int weight)
-        {
-            switch (SpeciesName)
-            {
-                case "Wolf":
-                    Diet = "predator";
-                    Biom = "forest";
-                    break; 
-
-                case "Lion":
-                    Diet = "predator";
-                    Biom = "savannah";
-                    break;
-
-                case "Elephant":
-                    Diet = "herbivorous";
-                    Biom = "savannah";
-                    break;
-            }
-            Name = name;
-            Age = age;
-            if (age <= _minAge)
-            {
-                Age = _minAge;
-            }
-            else
-            {
-                Age = age;
-            }
-            if (weight <= _minWeight)
-            {
-                Weight = _minWeight;
-            }
-            else
-            {
-                Weight = weight;
-            }
-        }
-       
         public void DoEat(string food, int mass)
         {
             if (mass < 0)
