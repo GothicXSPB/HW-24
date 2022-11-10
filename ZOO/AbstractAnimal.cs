@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 namespace ZOO
 {
@@ -10,13 +10,13 @@ namespace ZOO
 
         public int Age { get; set; }
 
-        public string SpeciesName { get; private set; }
+        public string SpeciesName { get; set; }
 
         public string Biom { get; private set; }
 
         public string RequiredAreaPerIndividual { get; private set; }
 
-        public int Weight { get; private set; }
+        public int Weight { get; set; }
 
         public string Food { get; set; }
 
@@ -24,70 +24,12 @@ namespace ZOO
 
         public string Sound { get; private set; }
 
-        private const int _minWeight = 35;
+        public int _minWeight = 35;
 
-        private const int _minAge = 0;
+        public int _minAge = 0;
 
-        //public AbstractAnimal(string SpeciesName, string name, int age, int weight)
-        //{
-        //    switch (SpeciesName)
-        //    {
-        //        case "Wolf":
-        //            Diet = "predator";
-        //            Biom = "forest";
-        //            break;
-
-        //        case "Lion":
-        //            Diet = "predator";
-        //            Biom = "savannah";
-        //            break;
-
-        //        case "Elephant":
-        //            Diet = "herbivorous";
-        //            Biom = "savannah";
-        //            break;
-        //    }
-        //    Name = name;
-        //    Age = age;
-        //    if (age <= _minAge)
-        //    {
-        //        Age = _minAge;
-        //    }
-        //    else
-        //    {
-        //        Age = age;
-        //    }
-        //    if (weight <= _minWeight)
-        //    {
-        //        Weight = _minWeight;
-        //    }
-        //    else
-        //    {
-        //        Weight = weight;
-        //    }
-        //}
-
-        public void DoEat(string food, int mass)
-        {
-            if (mass < 0)
-            {
-                throw new ArgumentException("mass не может быть меньше 0");
-            }
-            if (Weight >= 3 * _minWeight)
-            {
-                Console.WriteLine($"{Name}: Больше не может есть!");
-                return;
-            }
-            if (Diet == "predator")
-            {
-                PredatorEatOrNo(food);
-            }
-            if (Diet == "herbivorous")
-            {
-                HerbivoreEatOrNo(food);
-            }
-        }
-                
+        public abstract void DoEat(string food, int mass);               
+                        
         public void DoSound()
         {
             Console.WriteLine($"{Name} *рычит*");
@@ -107,10 +49,10 @@ namespace ZOO
             Console.WriteLine($"{Name} поиграл с мячиком и весит {Weight}");
         }
 
-        private void PredatorEatOrNo(string food)
+        public void PredatorEatOrNo(string food)
         {
             string[] predatorfood = new string[] { "fish", "meat", "chiken", "frog" };
-            for (int i = 0; i < GetLength(predatorfood); i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (predatorfood[i] == food)
                 {
@@ -123,10 +65,10 @@ namespace ZOO
             }
         }
 
-        private void HerbivoreEatOrNo(string food)
+        public void HerbivoreEatOrNo(string food)
         {
             string[] herbivorefood = new string[] { "grass", "hay" };
-            for (int i = 0; i < GetLength(herbivorefood); i++)
+            for (int i = 0; i < 2; i++)
             {
                 if (herbivorefood[i] == food)
                 {
