@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ZOO
+﻿namespace ZOO
 {
     public abstract class AbstractAnimal
     {
@@ -8,80 +6,92 @@ namespace ZOO
 
         public double AmountOfFoodConsumedPerDay { get; private set; }
 
-        public int Age { get; set; }
+        protected int _age { get; set; }
 
         public string SpeciesName { get; set; }
 
-        public string Biom { get; private set; }
+        protected string _biom { get; set; }
 
-        public string RequiredAreaPerIndividual { get; private set; }
+        protected string _requiredAreaPerIndividual { get; set; }
 
-        public int Weight { get; set; }
+        protected int Weight { get; set; }
 
         public string Food { get; set; }
 
-        public string Diet { get; set; }
+        protected string _diet { get; set; }
 
         public string Sound { get; private set; }
 
-        public int _minWeight = 35;
+        protected int _minWeight = 35;
 
-        public int _minAge = 0;
+        protected int _minAge = 0;
 
-        public abstract void DoEat(string food, int mass);               
-                        
+        public abstract void DoEat(string food, int mass);
+
         public void DoSound()
         {
-            Console.WriteLine($"{Name} *рычит*");
+            Console.WriteLine($"{Name} *roar*");
         }
 
         public void Play(int time)
         {
             if (time < 0)
             {
-                throw new ArgumentException("time не может двигаться в другую сторону");
+                throw new ArgumentException("time cannot move the other way");
             }
             Weight -= time / 10;
             if (Weight < _minWeight)
             {
                 Weight = _minWeight;
             }
-            Console.WriteLine($"{Name} поиграл с мячиком и весит {Weight}");
+            Console.WriteLine($"{Name} played with a ball and weighs {Weight}");
         }
 
+        protected string[] predatorfood = new string[] { "fish", "meat", "chiken", "frog" };
         public void PredatorEatOrNo(string food)
         {
-            string[] predatorfood = new string[] { "fish", "meat", "chiken", "frog" };
             for (int i = 0; i < 4; i++)
             {
                 if (predatorfood[i] == food)
                 {
-                    Console.WriteLine($"{Name} охотно кушает {food}");
-                }
-                else
-                {
-                    Console.WriteLine($"{Name} отказывается это есть");
+                    Console.WriteLine($"{Name} eats delicious {food}");
+                    return;
                 }
             }
+            Console.WriteLine($"{Name} refuse to eat");
         }
 
+        protected string[] herbivorefood = new string[] { "grass", "hay" };
         public void HerbivoreEatOrNo(string food)
         {
-            string[] herbivorefood = new string[] { "grass", "hay" };
             for (int i = 0; i < 2; i++)
             {
                 if (herbivorefood[i] == food)
                 {
-                    Console.WriteLine($"{Name} охотно поглащает пищу, которую ему дали");
-                }
-                else
-                {
-                    Console.WriteLine($"{Name} отказывается это есть");
+                    Console.WriteLine($"{Name} eats delicious");
+                    return;
                 }
             }
+            Console.WriteLine($"{Name} refuse to eat");
         }
 
-
-
+        public void AnimalStatus()
+        {
+            if (Weight >= 10 * _minWeight)
+            {
+                Console.WriteLine($"{Name} overate and can't eat anymore");
+                return;
+            }
+            if (Weight < _minWeight)
+            {
+                Console.WriteLine($"{Name} is hungry");
+                return;
+            }
+            else
+            {
+                Console.WriteLine($"{Name} feels good");
+            }
+        }
     }
 }
+

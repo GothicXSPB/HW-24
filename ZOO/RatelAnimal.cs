@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ZOO
+﻿namespace ZOO
 {
     public class RatelAnimal : AbstractAnimal
     {
@@ -12,15 +6,15 @@ namespace ZOO
         {
             SpeciesName = "mammals";
             Name = name;
-            Diet = "predator";
-            Age = age;
+            _diet = "predator";
+            _age = age;
             if (age <= _minAge)
             {
-                Age = _minAge;
+                _age = _minAge;
             }
             else
             {
-                Age = age;
+                _age = age;
             }
             if (weight <= _minWeight)
             {
@@ -36,35 +30,28 @@ namespace ZOO
         {
             if (mass < 0)
             {
-                throw new ArgumentException("mass не может быть меньше 0");
+                throw new ArgumentException("mass cannot be less than 0");
             }
             if (Weight >= 3 * _minWeight)
             {
-                Console.WriteLine($"{Name}: Больше не может есть!");
+                Console.WriteLine($"{Name}: Can't eat anymore!");
                 return;
             }
-            if (Diet == "predator")
-            {
-                PredatorEatOrNo(food);
-            }
-            if (Diet == "herbivorous")
-            {
-                HerbivoreEatOrNo(food);
-            }
+            PredatorEatOrNo(food);
         }
 
         public void Hunt(int time)
         {
             if (time < 0)
             {
-                throw new ArgumentException("time не может двигаться в другую сторону");
+                throw new ArgumentException("time cannot move the other way");
             }
             Weight -= time / 10;
             if (Weight < _minWeight)
             {
                 Weight = _minWeight;
             }
-            Console.WriteLine($"{Name} потратил много сил на охоте и весит {Weight}");
+            Console.WriteLine($"{Name} spent a lot of energy hunting and weighs {Weight}");
         }
     }
 }
