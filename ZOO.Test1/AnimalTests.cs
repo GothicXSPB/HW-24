@@ -4,7 +4,7 @@ namespace ZOO.Test
     public class ZooTests
     {
         [Test]
-        public void DoEatTest_WhenMassIsLessThenZero_ShuldArgumentExaption()
+        public void DoEatTest_WhenMassIsLessThenZero_ShouldArgumentException()
         {
             DuckAnimal duck3 = new DuckAnimal("ds", 4, 15);
             string food = "frog";
@@ -14,7 +14,7 @@ namespace ZOO.Test
         }
 
         [Test]
-        public void WalksTest_WhenTimeIsLessThenZero_ShuldArgumentExaption()
+        public void WalksTest_WhenTimeIsLessThenZero_ShouldArgumentException()
         {
             DuckAnimal duck3 = new DuckAnimal("ds", 4, 15);
             int time = -4;
@@ -23,7 +23,7 @@ namespace ZOO.Test
         }
 
         [Test]
-        public void SwimTest_WhenTimeIsLessThenZero_ShuldArgumentExaption()
+        public void SwimTest_WhenTimeIsLessThenZero_ShouldArgumentException()
         {
             IchthyosaurAnimal dino1 = new IchthyosaurAnimal("dino", 4, 44);
             int time = -4;
@@ -32,16 +32,16 @@ namespace ZOO.Test
         }
 
         [Test]
-        public void HuntTest_WhenTimeIsLessThenZero_ShuldArgumentExaption()
+        public void HuntTest_WhenTimeIsLessThenZero_ShouldArgumentException()
         {
             RatelAnimal beast = new RatelAnimal("beast", 4, 44);
             int time = -4;
 
             Assert.Throws<ArgumentException>(() => beast.Hunt(time));
         }
-        
+
         [Test]
-        public void FlyTest_WhenTimeIsLessThenZero_ShuldArgumentExaption()
+        public void FlyTest_WhenTimeIsLessThenZero_ShouldArgumentException()
         {
             StorkAnimal baby = new StorkAnimal("baby", 4, 44);
             int time = -4;

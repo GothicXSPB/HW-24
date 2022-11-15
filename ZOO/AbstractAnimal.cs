@@ -2,6 +2,11 @@
 {
     public abstract class AbstractAnimal
     {
+        protected string[] PredatorFood = new string[] { "fish", "meat", "chicken", "frog" };
+        protected string[] HerbivoreFood = new string[] { "grass", "hay" };
+        protected int MinWeight = 35;
+        protected int MinAge = 0;
+
         public string Name { get; set; }
 
         public double AmountOfFoodConsumedPerDay { get; private set; }
@@ -22,9 +27,7 @@
 
         public string Sound { get; private set; }
 
-        protected int _minWeight = 35;
 
-        protected int _minAge = 0;
 
         public abstract void DoEat(string food, int mass);
 
@@ -40,19 +43,18 @@
                 throw new ArgumentException("time cannot move the other way");
             }
             Weight -= time / 10;
-            if (Weight < _minWeight)
+            if (Weight < MinWeight)
             {
-                Weight = _minWeight;
+                Weight = MinWeight;
             }
             Console.WriteLine($"{Name} played with a ball and weighs {Weight}");
         }
 
-        protected string[] predatorfood = new string[] { "fish", "meat", "chiken", "frog" };
         public void PredatorEatOrNo(string food)
         {
             for (int i = 0; i < 4; i++)
             {
-                if (predatorfood[i] == food)
+                if (PredatorFood[i] == food)
                 {
                     Console.WriteLine($"{Name} eats delicious {food}");
                     return;
@@ -61,12 +63,11 @@
             Console.WriteLine($"{Name} refuse to eat");
         }
 
-        protected string[] herbivorefood = new string[] { "grass", "hay" };
         public void HerbivoreEatOrNo(string food)
         {
             for (int i = 0; i < 2; i++)
             {
-                if (herbivorefood[i] == food)
+                if (HerbivoreFood[i] == food)
                 {
                     Console.WriteLine($"{Name} eats delicious");
                     return;
@@ -77,12 +78,12 @@
 
         public void AnimalStatus()
         {
-            if (Weight >= 10 * _minWeight)
+            if (Weight >= 10 * MinWeight)
             {
                 Console.WriteLine($"{Name} overate and can't eat anymore");
                 return;
             }
-            if (Weight < _minWeight)
+            if (Weight < MinWeight)
             {
                 Console.WriteLine($"{Name} is hungry");
                 return;
@@ -92,6 +93,7 @@
                 Console.WriteLine($"{Name} feels good");
             }
         }
+
         public bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
         {
             if (name.SpeciesName == name1.SpeciesName)

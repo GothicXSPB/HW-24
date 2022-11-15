@@ -7,17 +7,17 @@
             SpeciesName = "bird";
             Name = name;
             _diet = "herbivore";
-            if (age <= _minAge)
+            if (age <= MinAge)
             {
-                _age = _minAge;
+                _age = MinAge;
             }
             else
             {
                 _age = age;
             }
-            if (weight <= _minWeight)
+            if (weight <= MinWeight)
             {
-                Weight = _minWeight;
+                Weight = MinWeight;
             }
             else
             {
@@ -31,7 +31,7 @@
             {
                 throw new ArgumentException("mass cannot be less than 0");
             }
-            if (Weight >= 3 * _minWeight)
+            if (Weight >= 3 * MinWeight)
             {
                 Console.WriteLine($"{Name}: Can't eat anymore!");
                 return;
@@ -46,25 +46,11 @@
                 throw new ArgumentException("time cannot move the other way");
             }
             Weight -= time / 10;
-            if (Weight < _minWeight)
+            if (Weight < MinWeight)
             {
-                Weight = _minWeight;
+                Weight = MinWeight;
             }
             Console.WriteLine($"{Name} walked for a while and weighs {Weight}");
-        }
-
-        public bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
-        {
-            if (name.SpeciesName == name1.SpeciesName)
-            {
-                Console.WriteLine("They play together");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("They avoid each other");
-                return false;
-            }
         }
     }
 }
