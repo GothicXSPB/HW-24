@@ -48,8 +48,5 @@ namespace ZOO.Test
 
             Assert.Throws<ArgumentException>(() => baby.Fly(time));
         }
-
-
     }
-
 }
