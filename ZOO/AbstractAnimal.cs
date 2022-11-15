@@ -3,8 +3,11 @@
     public abstract class AbstractAnimal
     {
         protected string[] PredatorFood = new string[] { "fish", "meat", "chicken", "frog" };
+        
         protected string[] HerbivoreFood = new string[] { "grass", "hay" };
+        
         protected int MinWeight = 35;
+        
         protected int MinAge = 0;
 
         public string Name { get; set; }
