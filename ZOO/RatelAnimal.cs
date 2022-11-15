@@ -53,5 +53,19 @@
             }
             Console.WriteLine($"{Name} spent a lot of energy hunting and weighs {Weight}");
         }
+
+        public bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
+        {
+            if (name.SpeciesName == name1.SpeciesName)
+            {
+                Console.WriteLine("They play together");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("They avoid each other");
+                return false;
+            }
+        }
     }
 }

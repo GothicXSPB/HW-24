@@ -39,7 +39,7 @@
             PredatorEatOrNo(food);
         }
 
-        public void Swimming(int time)
+        public void Swim(int time)
         {
             if (time < 0)
             {
@@ -51,6 +51,20 @@
                 Weight = _minWeight;
             }
             Console.WriteLine($"{Name} swam many miles and weighs {Weight}");
+        }
+
+        public bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
+        {
+            if (name.SpeciesName == name1.SpeciesName)
+            {
+                Console.WriteLine("They play together");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("They avoid each other");
+                return false;
+            }
         }
     }
 }
