@@ -94,7 +94,7 @@
             }
         }
 
-        public bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
+        public new bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
         {
             if (name.SpeciesName == name1.SpeciesName)
             {
