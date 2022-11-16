@@ -8,6 +8,10 @@
             Name = name;
             _diet = "predator";
             _age = age;
+            _biom = "savannah";
+            _requiredAreaPerIndividual = 10;
+            AmountOfFoodConsumedPerDay = 3;
+
             if (age <= MinAge)
             {
                 _age = MinAge;

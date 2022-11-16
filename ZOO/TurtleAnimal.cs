@@ -1,12 +1,16 @@
 ﻿namespace ZOO
 {
-    public class IchthyosaurAnimal : AbstractAnimal
+    public class TurtleAnimal : AbstractAnimal
     {
-        public IchthyosaurAnimal(string name, int age, int weight)
+        public TurtleAnimal(string name, int age, int weight)
         {
             SpeciesName = "reptiles";
             Name = name;
-            _diet = "predator";
+            _diet = "herbivore";
+            _biom = "savannah";
+            _requiredAreaPerIndividual = 1;
+            AmountOfFoodConsumedPerDay = 1;
+
             if (age <= MinAge)
             {
                 _age = MinAge;

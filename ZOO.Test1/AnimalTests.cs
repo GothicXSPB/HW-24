@@ -24,7 +24,7 @@ namespace ZOO.Test
         [Test]
         public void SwimTest_WhenTimeIsLessThenZero_ShouldArgumentException()
         {
-            IchthyosaurAnimal dino1 = new IchthyosaurAnimal("dino", 4, 44);
+            TurtleAnimal dino1 = new TurtleAnimal("dino", 4, 44);
             int time = -4;
 
             Assert.Throws<ArgumentException>(() => dino1.Swim(time));

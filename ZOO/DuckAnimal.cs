@@ -6,7 +6,12 @@
         {
             SpeciesName = "bird";
             Name = name;
+            _age = age;
             _diet = "herbivore";
+            _biom = "lake";
+            _requiredAreaPerIndividual = 1;
+            AmountOfFoodConsumedPerDay = 1;
+
             if (age <= MinAge)
             {
                 _age = MinAge;

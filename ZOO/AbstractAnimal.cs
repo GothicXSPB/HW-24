@@ -12,7 +12,7 @@
 
         public string Name { get; set; }
 
-        public double AmountOfFoodConsumedPerDay { get; private set; }
+        public int AmountOfFoodConsumedPerDay { get; set; }
 
         protected int _age { get; set; }
 
@@ -20,7 +20,7 @@
 
         protected string _biom { get; set; }
 
-        protected string _requiredAreaPerIndividual { get; set; }
+        protected int _requiredAreaPerIndividual { get; set; }
 
         protected int Weight { get; set; }
 
@@ -99,7 +99,7 @@
 
         public bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
         {
-            if (name.SpeciesName == name1.SpeciesName)
+            if (name._diet == name1._diet)
             {
                 Console.WriteLine("They play together");
                 return true;
