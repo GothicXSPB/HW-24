@@ -18,7 +18,7 @@
 
         public string SpeciesName { get; set; }
 
-        protected string _biom { get; set; }
+        public string Biom { get; set; }
 
         public int RequiredAreaPerIndividual { get; set; }
 

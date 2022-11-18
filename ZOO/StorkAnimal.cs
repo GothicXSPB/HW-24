@@ -8,7 +8,7 @@
             Name = name;
             _diet = "predator";
             _age = age;
-            _biom = "lake";
+            Biom = "lake";
             RequiredAreaPerIndividual = 5;
             AmountOfFoodConsumedPerDay = 2;
 

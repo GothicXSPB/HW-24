@@ -7,7 +7,7 @@
             SpeciesName = "reptiles";
             Name = name;
             _diet = "herbivore";
-            _biom = "savannah";
+            Biom = "savannah";
             RequiredAreaPerIndividual = 1;
             AmountOfFoodConsumedPerDay = 1;
 

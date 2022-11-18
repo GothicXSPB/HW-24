@@ -27,9 +27,13 @@
             Square = square;
         }
 
-        public void AddAnimalInAviary(DuckAnimal a)
+        public void AddAnimalInAviary(DuckAnimal a, Aviary x)
         {
             
+            if(x.Biom == a.Biom)
+            {
+
+            }
         }
 
 
