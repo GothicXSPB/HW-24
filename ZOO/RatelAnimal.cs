@@ -9,7 +9,7 @@
             _diet = "predator";
             _age = age;
             _biom = "savannah";
-            _requiredAreaPerIndividual = 10;
+            RequiredAreaPerIndividual = 10;
             AmountOfFoodConsumedPerDay = 3;
 
             if (age <= MinAge)

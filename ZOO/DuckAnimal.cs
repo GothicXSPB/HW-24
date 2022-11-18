@@ -9,7 +9,7 @@
             _age = age;
             _diet = "herbivore";
             _biom = "lake";
-            _requiredAreaPerIndividual = 1;
+            RequiredAreaPerIndividual = 1;
             AmountOfFoodConsumedPerDay = 1;
 
             if (age <= MinAge)

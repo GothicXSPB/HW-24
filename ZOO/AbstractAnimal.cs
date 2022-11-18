@@ -20,7 +20,7 @@
 
         protected string _biom { get; set; }
 
-        protected int _requiredAreaPerIndividual { get; set; }
+        public int RequiredAreaPerIndividual { get; set; }
 
         protected int Weight { get; set; }
 
