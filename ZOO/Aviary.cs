@@ -1,4 +1,6 @@
-﻿namespace ZOO
+﻿using System;
+
+namespace ZOO
 {
     public class Aviary
     {
@@ -8,8 +10,7 @@
 
         public int Square { get; set; }
 
-        public abstract class AbstractAnimal { }
-        public bool ChekFreeSpace(Aviary x, DuckAnimal a)
+        public bool ChekFreeSpace(Aviary x, AbstractAnimal a)
         {
             if (x.Square - a.RequiredAreaPerIndividual > 0)
             {
@@ -27,16 +28,19 @@
             Square = square;
         }
 
-        public void AddAnimalInAviary(DuckAnimal a, Aviary x)
+        public void AddAnimalInAviary(AbstractAnimal a)
         {
-            
-            if(x.Biom == a.Biom)
+            AbstractAnimal[] inAviary = new AbstractAnimal[0];
+            for (int i = 0; i < inAviary.Length; i++)
             {
-
+                if (inAviary[i].Diet == a.Diet || inAviary[i].SpeciesName == a.SpeciesName && Square - a.RequiredAreaPerIndividual>0)
+                {
+                    if (Biom == a.Biom)
+                    {
+                        AbstractAnimal[] inAviary = AbstractAnimal.Append(AbstractAnimal a);
+                    }
+                }
             }
-        }
-
-
-
+        }  
     }
 }

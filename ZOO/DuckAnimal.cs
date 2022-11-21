@@ -7,7 +7,7 @@
             SpeciesName = "bird";
             Name = name;
             _age = age;
-            _diet = "herbivore";
+            Diet = "herbivore";
             Biom = "lake";
             RequiredAreaPerIndividual = 1;
             AmountOfFoodConsumedPerDay = 1;

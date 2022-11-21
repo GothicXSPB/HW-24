@@ -26,7 +26,7 @@
 
         public string Food { get; set; }
 
-        protected string _diet { get; set; }
+        public string Diet { get; set; }
 
         public string Sound { get; private set; }
 

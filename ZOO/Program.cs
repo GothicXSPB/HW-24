@@ -13,4 +13,3 @@ zoo[0] = new DuckAnimal("", 3, 5);
 zoo[1] = new RatelAnimal("", 6, 12);
 zoo[2] = new StorkAnimal("", 4, 8);
 zoo[3] = new TurtleAnimal("", 127, 35);
-
