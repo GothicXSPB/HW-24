@@ -99,7 +99,7 @@
 
         public bool WillPlay(AbstractAnimal name, AbstractAnimal name1)
         {
-            if (name._diet == name1._diet)
+            if (name.Diet == name1.Diet)
             {
                 Console.WriteLine("They play together");
                 return true;

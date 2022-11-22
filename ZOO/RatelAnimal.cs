@@ -6,7 +6,7 @@
         {
             SpeciesName = "mammals";
             Name = name;
-            _diet = "predator";
+            Diet = "predator";
             _age = age;
             Biom = "savannah";
             RequiredAreaPerIndividual = 10;

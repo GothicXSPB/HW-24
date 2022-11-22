@@ -6,7 +6,7 @@
         {
             SpeciesName = "bird";
             Name = name;
-            _diet = "predator";
+            Diet = "predator";
             _age = age;
             Biom = "lake";
             RequiredAreaPerIndividual = 5;
