@@ -2,13 +2,11 @@
 {
     public class Aviary
     {
-        AbstractAnimal[] inAviary = new AbstractAnimal[0];
+        public string Biom { get; private set; }
 
-        public string Name { get; set; }
+        public int Square { get; private set; }
 
-        public string Biom { get; set; }
-
-        public int Square { get; set; }
+        public AbstractAnimal[] InAviary { get; private set; }
 
         public bool ChekFreeSpace(Aviary x, AbstractAnimal a)
         {
@@ -21,22 +19,18 @@
                 return false;
             }
         }
-        public Aviary(string name, string biom, int square)
+        public Aviary(string biom, int square)
         {
-            Name = name;
             Biom = biom;
             Square = square;
         }
 
         public void AddAnimalInAviary(AbstractAnimal a)
         {
-            for (int i = 0; i <= inAviary.Length-1; i++)
+            for (int i = 0; i <= InAviary.Length - 1; i++)
             {
-                if (inAviary[0] == null)
-                {
-                    inAviary[0] = a;
-                }
-                if (inAviary[i].Diet == a.Diet || inAviary[i].SpeciesName == a.SpeciesName && Square - a.RequiredAreaPerIndividual >= 0)
+
+                if (Biom == a.Biom && GetFreeSpace() >= a.RequiredAreaPerIndividual &&  )
                 {
                     if (Biom == a.Biom)
                     {
@@ -54,10 +48,31 @@
 
         public void AddAnimal(AbstractAnimal a)
         {
-            AbstractAnimal[] result = new AbstractAnimal[(inAviary.Length) + 1];
-            result = inAviary;
+            AbstractAnimal[] result = new AbstractAnimal[(InAviary.Length) + 1];
+            result = InAviary;
             result[result.Length] = a;
-            result.CopyTo(inAviary, 0);
+            result.CopyTo(InAviary, 0);
+        }
+
+        private int GetFreeSpace()
+        {
+            int freeSpace = Square;
+
+            foreach (AbstractAnimal i in InAviary)
+            {
+                freeSpace -= i.RequiredAreaPerIndividual;
+            }
+
+            return freeSpace;
+        }
+
+        private bool IsItSafeToKeepThemTogether(AbstractAnimal a)
+        {
+            foreach (AbstractAnimal i in InAviary)
+            {
+                if (i.Diet != a.Diet && i.SpeciesName == a.SpeciesName || i.Diet == a.Diet)
+                { }
+            }
         }
     }
 }
